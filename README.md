@@ -13,11 +13,15 @@ Executar o projeto
 ```
 Aplicação disponível na URL `http://localhost:8080`
 
-## 📄 Documentação Swagger
+## Listagem API REST
+
+- [Api.yaml](https://github.com/freitasgustavos/quarkus-api/blob/main/api.yaml)
+
+## Documentação Swagger
 
 Disponível na URL `http://localhost:8080/swagger-ui/`
 
-## 📄 Diagrama de classes
+## Diagrama de classes
 
 - https://www.planttext.com/
 
