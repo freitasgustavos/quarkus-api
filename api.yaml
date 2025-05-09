@@ -1,0 +1,374 @@
+type: collection.insomnia.rest/5.0
+name: Java - Teste Tecnico Shift
+meta:
+  id: wrk_101ec846fe084ccc8ae47a5b169d5e14
+  created: 1728349447265
+  modified: 1746655849081
+collection:
+  - name: People
+    meta:
+      id: fld_54b563f235fd4fe79f702a16d6e662f9
+      created: 1746655864594
+      modified: 1746655864594
+      sortKey: -1746655864594
+    children:
+      - url: localhost:8080/api/people
+        name: List
+        meta:
+          id: req_b1d30887892e479aac21982ee93e23bb
+          created: 1744825038391
+          modified: 1746818070189
+          isPrivate: false
+          sortKey: -1746655870355
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/people
+        name: Create
+        meta:
+          id: req_c7b08b96914d469ba2e0fd1efd804349
+          created: 1746655857958
+          modified: 1746818060046
+          isPrivate: false
+          sortKey: -1746655870455
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Gustavo Silva de Freitas",
+            	"email": "contato@gustavofreiats.dev"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/people/2
+        name: Delete
+        meta:
+          id: req_1ad615e179234a06805bc850575b81c3
+          created: 1746656090955
+          modified: 1746818067458
+          isPrivate: false
+          sortKey: -1742193510095
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/people/301
+        name: Update
+        meta:
+          id: req_5074da00c0b04e5c98bcef655fc5afef
+          created: 1746656226239
+          modified: 1746712831279
+          isPrivate: false
+          sortKey: -1739962329965
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"documentNumber": "1989-01-06",
+            	"phone": "3491656884"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/people/1
+        name: Find
+        meta:
+          id: req_07207a99e8f64a34a39529642db17b90
+          created: 1746656234519
+          modified: 1746818054212
+          isPrivate: false
+          sortKey: -1744424690225
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: HealtPlan
+    meta:
+      id: fld_7b8e38f2750d4f9cb093b75b1dabf009
+      created: 1746661840300
+      modified: 1746818075953
+      sortKey: -1741896653434.5
+    children:
+      - url: localhost:8080/api/health-plan
+        name: List
+        meta:
+          id: req_eb5f1780cd414b5fa5c1f6e0693da98f
+          created: 1746661840302
+          modified: 1746818077063
+          isPrivate: false
+          sortKey: -1746655870355
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/health-plan
+        name: Create
+        meta:
+          id: req_ab7cbc9ac54d4584b90e4124264cbe4e
+          created: 1746661840303
+          modified: 1746662142630
+          isPrivate: false
+          sortKey: -1746655870455
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Unimed",
+            	"ansRegistry": 12345
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/health-plan/1
+        name: Delete
+        meta:
+          id: req_d299fa8c5ac44026808fa2706bf0da33
+          created: 1746661840304
+          modified: 1746662875237
+          isPrivate: false
+          sortKey: -1742193510095
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/health-plan/1
+        name: Update
+        meta:
+          id: req_e172379b691645539ecd4e43298c2ac1
+          created: 1746661840305
+          modified: 1746662718633
+          isPrivate: false
+          sortKey: -1739962329965
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"ansRegistry": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/health-plan/1
+        name: Find
+        meta:
+          id: req_afc3d1ff8bfc4f34a3426b6872bebd00
+          created: 1746661840306
+          modified: 1746662181737
+          isPrivate: false
+          sortKey: -1744424690225
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Budget
+    meta:
+      id: fld_122576764a2b40df8e095b11ca371591
+      created: 1746663996416
+      modified: 1746663996416
+      sortKey: -1739517047854.75
+    children:
+      - url: localhost:8080/api/budget
+        name: List
+        meta:
+          id: req_639cffec396a40d69744dddf39c4c49e
+          created: 1746663996418
+          modified: 1746803032590
+          isPrivate: false
+          sortKey: -1746655870355
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/budget
+        name: Create
+        meta:
+          id: req_cd7b86bf88e843328e36a2ff21c15240
+          created: 1746663996419
+          modified: 1746811967668
+          isPrivate: false
+          sortKey: -1746655870455
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "personId": 1,
+              "healthPlanId": 1,
+              "items": [
+            		{
+                  "budgetableItemId": 1,
+                  "quantity": 1
+                },
+            		{
+                  "budgetableItemId": 3,
+                  "quantity": 3,
+                  "itemDiscountAmount": 1
+                },
+            		{
+                  "budgetableItemId": 2,
+                  "quantity": 5,
+                  "itemDiscountAmount": 5
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/budget/1
+        name: Find
+        meta:
+          id: req_dc5a7852427f4c1fa15549c31da96aff
+          created: 1746663996423
+          modified: 1746802629373
+          isPrivate: false
+          sortKey: -1744424690225
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2314edf9065241db9b787a5598b14225
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_230e103f2584a3f59c3290aef5b2acda5d3ca561
+    created: 1732838179582
+    modified: 1732838179582
+environments:
+  name: Base Environment
+  meta:
+    id: env_230e103f2584a3f59c3290aef5b2acda5d3ca561
+    created: 1728349447271
+    modified: 1732838179556
+    isPrivate: false
