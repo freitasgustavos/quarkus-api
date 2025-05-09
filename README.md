@@ -1,62 +1,87 @@
-# code-with-quarkus
+## 🚀 Executando o projeto
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Iniciar o continer do banco de dados
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+```shell script
+docker compose up -d
+```
 
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
+Executar o projeto
 
 ```shell script
 ./mvnw quarkus:dev
 ```
+Aplicação disponível na URL `http://localhost:8080`
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+## 📄 Documentação Swagger
 
-## Packaging and running the application
+Disponível na URL `http://localhost:8080/swagger-ui/`
 
-The application can be packaged using:
+## 📄 Diagrama de classes
 
-```shell script
-./mvnw package
+- https://www.planttext.com/
+
 ```
+@startuml
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+class Budget {
+    Long id
+    LocalDate creationDate
+    LocalDate validityDate
+    BigDecimal grossTotalAmount
+    BigDecimal totalDiscountAmount
+    BigDecimal netTotalAmount
+    +recalculateTotals()
+}
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+class BudgetItem {
+    Long id
+    int quantity
+    BigDecimal grossUnitPrice
+    BigDecimal itemDiscountAmount
+    BigDecimal netUnitPrice
+    BigDecimal netTotalItemAmount
+    +calculateValues()
+    +setBudget(Budget)
+}
 
-If you want to build an _über-jar_, execute the following command:
+class Person {
+    Long id
+    String name
+    String documentNumber
+    LocalDate birthDate
+    String phone
+    String email
+}
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
+class HealthPlan {
+    Long id
+    String name
+    String ansRegistry
+}
+
+abstract class BudgetTableItem {
+    Long id
+    String name
+    BigDecimal basePrice
+    +getItemType()
+}
+
+class Exam {
+    String tussCode
+    String preparationInstructions
+}
+
+class Fee {
+    String description
+}
+
+Budget "1" o-- "*" BudgetItem : items
+Budget "*" o-- "1" Person : person
+Budget "*" o-- "1" HealthPlan : healthPlan
+BudgetItem "*" o-- "1" BudgetTableItem : item
+BudgetTableItem <|-- Exam
+BudgetTableItem <|-- Fee
+
+@enduml
 ```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/code-with-quarkus-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
