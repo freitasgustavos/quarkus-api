@@ -2,7 +2,9 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "docker"
-      
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: postgres
+      POSTGRES_DB: budget
+
     ports:
       - "5432:5432"
